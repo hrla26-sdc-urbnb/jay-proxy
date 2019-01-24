@@ -7,7 +7,8 @@ router.route('/reviews/:id')
         axios.get(`http://18.188.207.136:2019/reviews/${id}`)
             .then((data) => {
                 res.send(data);
-            });
+            })
+            .catch(err => res.send(err));
     });
 
 
