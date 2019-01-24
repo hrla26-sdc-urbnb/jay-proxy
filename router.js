@@ -1,4 +1,4 @@
-const router = require('express').router;
+const router = require('express').Router();
 const axios = require('axios');
 
 router.route('/reviews/:id')

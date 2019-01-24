@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const parser = require('body-parser');
-const router = require('router.js');
+const router = require('./router.js');
 
 const port = 3000;
 const app = express();
@@ -9,6 +9,7 @@ const app = express();
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true, }));
 app.use(express.static(path.join(__dirname, './public/')));
+app.use(express.static(path.join(__dirname, './loaderio')));
 app.use('/', router);
 
 
