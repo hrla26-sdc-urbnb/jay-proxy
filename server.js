@@ -11,7 +11,7 @@ app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './public/')));
 app.use(express.static(path.join(__dirname, './loaderio')));
-app.use('/', router);
+app.use('/reviews', router);
 
 
 
