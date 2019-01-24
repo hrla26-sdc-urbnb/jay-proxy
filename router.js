@@ -3,22 +3,26 @@ const axios = require('axios');
 
 router.route('/reviews/:id')
     .get((req, res) => {
-        const id = parseInt(req.params.id);
+        const {id} = req.params;
         console.log(id, 'here')
-        axios.get(`http://ec2-18-188-207-136.us-east-2.compute.amazonaws.com:2019/reviews/${id}`)
+        axios.get(`http://ec2-18-188-207-136.us-east-2.compute.amazonaws.com:2019/api/reviews/${id}`)
             .then((data) => {
-                console.log(data, 'data')
-                res.send(data);
+                res.send(data.data);
             })
-            .catch(err => res.send(err));
+            .catch((err) => {
+                res.send(err)
+            });
     });
 router.route('/reviews')
 .post((req, res) => {
-    axios.post('http://ec2-18-188-207-136.us-east-2.compute.amazonaws.com:2019/reviews', req.body)
+    axios.post('http://ec2-18-188-207-136.us-east-2.compute.amazonaws.com:2019/api/reviews', req.body)
         .then((data) => {
             res.send(data);
         })
-        .catch(err => res.send(err));
+        .catch((err) => {
+            console.log('second catch');
+            res.send(err);
+        });
 });
 
 
