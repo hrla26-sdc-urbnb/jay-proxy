@@ -2,10 +2,9 @@ const express = require('express');
 const path = require('path');
 const parser = require('body-parser');
 const router = require('./router.js');
-const exp = require('express');
 
-const port = 3000;
-const app = exp();
+const port = 2019;
+const app = express();
 
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
