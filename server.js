@@ -8,9 +8,9 @@ const app = express();
 
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-app.use('/api', router);
 app.use(express.static(path.join(__dirname, './public/')));
 app.use(express.static(path.join(__dirname, './loaderio')));
+app.use('/api', router);
 
 
 
